@@ -24,10 +24,7 @@ def all_functions():
             print("Неверный ввод")
 
 if __name__ == "__all_functions__":
-    def add_note():
-        text = input("Введите текст заметки:")
-        notes.append({"text": text, "done": False})
-        print("Заметка добавлена!")
+    def add_note(): pass
     def view_note(): pass
     def delete_note(): pass
     def done_note(): pass
