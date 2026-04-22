@@ -34,6 +34,10 @@ if __name__ == "__all_functions__":
         for i, note in enumerate(notes):
             status = "[X]" if note["done"] else "[ ]"
             print(f"{i}. {status} {note['text']}")
-    def delete_note(): pass
+    def delete_note():
+        idx = int(input("Введите номер заметки, которую хотите удалить: "))
+        if 0 <= idx <= len(notes):
+            notes.pop(idx)
+        print("Заметка удалена!")
     def done_note(): pass
     all_functions()
