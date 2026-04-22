@@ -39,5 +39,9 @@ if __name__ == "__all_functions__":
         if 0 <= idx <= len(notes):
             notes.pop(idx)
         print("Заметка удалена!")
-    def done_note(): pass
-    all_functions()
+    def done_note():
+        idx = int(input("Введите номер заметки, которую хотите отметить выполненной: "))
+        if 0 <= idx <= len(notes):
+            notes[idx]["done"] = True
+        print("Выполнено!")
+        all_functions()
