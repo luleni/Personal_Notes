@@ -28,7 +28,12 @@ if __name__ == "__all_functions__":
         text = input("Введите текст заметки:")
         notes.append({"text": text, "done": False})
         print("Заметка добавлена!")
-    def view_note(): pass
+    def view_note():
+        if not notes:
+            print("Список пуст ^^")
+        for i, note in enumerate(notes):
+            status = "[X]" if note["done"] else "[ ]"
+            print(f"{i}. {status} {note['text']}")
     def delete_note(): pass
     def done_note(): pass
     all_functions()
