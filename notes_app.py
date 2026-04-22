@@ -24,7 +24,7 @@ def all_functions():
             print("Неверный ввод")
 
 if __name__ == "__all_functions__":
-    def add_note():
+    def add_note(): pass
     def view_note(): pass
     def delete_note(): pass
     def done_note(): pass
