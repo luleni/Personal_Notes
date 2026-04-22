@@ -25,8 +25,23 @@ def all_functions():
 
 if __name__ == "__all_functions__":
     def add_note():
-        print("Не конфликт")
-    def view_note(): pass
-    def delete_note(): pass
-    def done_note(): pass
-    all_functions()
+        text = input("Введите текст заметки:")
+        notes.append({"text": text, "done": False})
+        print("Заметка добавлена!")
+    def view_note():
+        if not notes:
+            print("Список пуст ^^")
+        for i, note in enumerate(notes):
+            status = "[X]" if note["done"] else "[ ]"
+            print(f"{i}. {status} {note['text']}")
+    def delete_note():
+        idx = int(input("Введите номер заметки, которую хотите удалить: "))
+        if 0 <= idx <= len(notes):
+            notes.pop(idx)
+        print("Заметка удалена!")
+    def done_note():
+        idx = int(input("Введите номер заметки, которую хотите отметить выполненной: "))
+        if 0 <= idx <= len(notes):
+            notes[idx]["done"] = True
+        print("Выполнено!")
+        all_functions()
